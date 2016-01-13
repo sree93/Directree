@@ -1,0 +1,48 @@
+﻿<Window x:Class="Directree.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="clr-namespace:Directree.WPFPieChart.Controls.PieChart"
+        xmlns:b="clr-namespace:Directree.WPFPieChart.Shapes"
+        Title="DirecTree" Height="755.635" Width="598.134">
+
+    <Window.Resources>
+        <x:ArrayExtension Type="{x:Type Brush}" x:Key="brushes">
+            <SolidColorBrush Color="#9F15C3"/>
+            <SolidColorBrush Color="#FF8E01"/>
+            <SolidColorBrush Color="#339933"/>
+            <SolidColorBrush Color="#00AAFF"/>
+            <SolidColorBrush Color="#818183"/>
+            <SolidColorBrush Color="#000033"/>
+        </x:ArrayExtension>
+
+    </Window.Resources>    
+    <Grid>
+
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem x:Name="menu_file_import" Header="_Import Settings" IsEnabled="False"/>
+                    <MenuItem x:Name="menu_file_export" Header="_Export Settings" IsEnabled="False"/>
+                    <Separator />
+                    <MenuItem x:Name="menu_file_prefs" Header="_Preferences" IsEnabled="False" />
+                    <Separator />
+                    <MenuItem x:Name="menu_file_exit" Header="_Exit" Click="menu_file_exit_Click" />
+                </MenuItem>
+            </Menu>
+            <TextBox AcceptsReturn="True" />
+        </DockPanel>
+
+        <c:PieChartLayout HorizontalAlignment="Left"
+                              x:Name="piePlotterC" PlottedProperty="Fund" Margin="20,20,0,0" VerticalAlignment="Top">
+            <c:PieChartLayout.ColorSelector>
+                <c:IndexedColourSelector Brushes="{StaticResource brushes}"/>
+            </c:PieChartLayout.ColorSelector>
+        </c:PieChartLayout>
+        <c:PieChartLayout HorizontalAlignment="Right"
+        	x:Name="piePlotterD" PlottedProperty="Fund" Margin="0,0,10,10" VerticalAlignment="Bottom">
+            <c:PieChartLayout.ColorSelector>
+                <c:IndexedColourSelector Brushes="{StaticResource brushes}"/>
+            </c:PieChartLayout.ColorSelector>
+        </c:PieChartLayout>
+    </Grid>
+</Window>
