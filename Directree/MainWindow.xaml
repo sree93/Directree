@@ -28,6 +28,15 @@
                     <Separator />
                     <MenuItem x:Name="menu_file_exit" Header="_Exit" Click="menu_file_exit_Click" />
                 </MenuItem>
+                
+                <MenuItem Header="_Cleaner">
+                    <MenuItem x:Name="menu_cleaner_clean_now" Header="_Clean Now" />
+                    <Separator />
+                    <MenuItem x:Name="menu_cleaner_add" Header="_Add Entry" Click="menu_cleaner_add_Click" />
+                    <MenuItem x:Name="menu_cleaner_edit" Header="_Edit Entry" />
+                    <Separator />
+                    <MenuItem x:Name="menu_cleaner_setting" Header="_Settings" />
+                </MenuItem>
             </Menu>
             <TextBox AcceptsReturn="True" />
         </DockPanel>

@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using Directree.WPFPieChart.Shapes;
 using Directree.Logic.Analytics;
+using Directree.Logic.Cleaner;
 
 namespace Directree
 {
@@ -29,6 +30,8 @@ namespace Directree
         public MainWindow()
         {
             InitializeComponent();
+
+            Logic.Data.DbHelper db = new Logic.Data.DbHelper();
 
             //classes = new ObservableCollection<AssetClass>(AssetClass.ConstructTestData());///////////
             //piePlotterC.DataContext = classes;////////////
@@ -49,6 +52,12 @@ namespace Directree
         private void menu_file_exit_Click(object sender, RoutedEventArgs e)
         {
             closeApp();
+        }
+
+        private void menu_cleaner_add_Click(object sender, RoutedEventArgs e)
+        {
+            CleanerAddWindow cleanerAdd = new CleanerAddWindow();
+            cleanerAdd.Show();
         }
     }
 }
